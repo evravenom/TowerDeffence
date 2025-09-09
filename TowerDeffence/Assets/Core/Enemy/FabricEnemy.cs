@@ -8,5 +8,7 @@ public abstract class FabricEnemy
 
     public abstract IEnemy CreateEnemy(Vector2 position, List<GameObject> path);
 
+    public abstract EnemyType GetEnemyType();
+
     public void SetPrefab(GameObject prefab) => _prefab = prefab;
 }

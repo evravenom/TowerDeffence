@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         while (!IsWaveEnded(wave))
         {
             int enemyID = Random.Range(0, wave.SpawnEnemies.Count);
-            wave.SpawnEnemies[enemyID].Fabric.CreateEnemy(transform.position, _pathFinder.GetPath(wave.SpawnEnemies[enemyID].Fabric.GetType()));
+            wave.SpawnEnemies[enemyID].Fabric.CreateEnemy(transform.position, _pathFinder.GetPath(wave.SpawnEnemies[enemyID].Fabric.GetEnemyType()));
             wave.SpawnEnemies[enemyID].Count -= 1;
 
             if (wave.SpawnEnemies[enemyID].Count == 0)
@@ -58,4 +58,7 @@ public class WaveEnemyData
 {
     [field: SerializeReference, SR] public FabricEnemy Fabric { get; private set; }
     public int Count;
+
+
+    public void SetFabric(FabricEnemy fabric) => Fabric = fabric;
 }

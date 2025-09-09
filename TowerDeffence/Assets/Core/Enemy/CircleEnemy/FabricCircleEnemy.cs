@@ -15,4 +15,7 @@ public class FabricCircleEnemy : FabricEnemy
 
         return CircleEnemy;
     }
+
+
+    public override EnemyType GetEnemyType() => EnemyType.DefaultEnemy;
 }

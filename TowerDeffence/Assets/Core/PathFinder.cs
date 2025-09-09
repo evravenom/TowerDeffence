@@ -16,11 +16,11 @@ public class PathFinder
         [field: SerializeField] public List<GameObject> path { get; private set; }
         [SerializeReference, SR] private FabricEnemy enemyFabric;
 
-        public Type enemyType => enemyFabric.GetType();
+        public EnemyType enemyType;
     }
 
 
-    public List<GameObject> GetPath(Type enemyType)
+    public List<GameObject> GetPath(EnemyType enemyType)
     {
         if (EnemyToPath.Count != 0)
         {
@@ -32,7 +32,7 @@ public class PathFinder
                 }
             }
         }
-        
+
         return DefaultPath;
     }
 }
